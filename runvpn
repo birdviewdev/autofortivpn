@@ -1,2 +1,7 @@
 #!/bin/bash
-sudo ${current path}/autovpn connect production --background
+if pgrep openfortivpn > /dev/null
+then
+    echo "VPN is already running!"
+else
+    sudo ${current path}/autovpn connect production --background
+fi
